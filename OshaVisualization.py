@@ -1,19 +1,10 @@
 # Import required libraries
 import pandas as pd
-import numpy as np
-
-import matplotlib.pyplot as plt
-import seaborn as sns
-
-# To ignore warnings
-import warnings
-warnings.filterwarnings('ignore')
-
-# Remove the limit from the number of displayed columns and rows. It helps to see the entire dataframe while printing it
-pd.set_option("display.max_columns", None)
-
-import pandas as pd
 import plotly.express as px
+import streamlit as st
+
+# Title for the Streamlit app
+st.title('OSHA Inspection Data Visualization')
 
 # Hardcoded values for company names and number of inspections
 data = {
@@ -39,4 +30,5 @@ fig.update_layout(
     height=600  # Adjust height to fit the data
 )
 
-fig.show()
+# Display the plot in the Streamlit app
+st.plotly_chart(fig)
